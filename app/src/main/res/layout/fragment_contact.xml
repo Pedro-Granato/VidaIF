@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_white"
+    android:background="@color/background_gray_light"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/padding_large">
+        android:paddingTop="@dimen/padding_medium"
+        android:paddingBottom="@dimen/padding_large"
+        android:paddingStart="@dimen/padding_medium"
+        android:paddingEnd="@dimen/padding_medium">
 
         <!-- Location Section -->
         <TextView
@@ -18,33 +22,42 @@
             android:text="@string/location_section"
             android:textColor="@color/primary_green"
             android:textSize="@dimen/text_size_section"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
-            android:background="@drawable/bg_contact_card"
-            android:orientation="vertical"
-            android:padding="@dimen/padding_medium">
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardBackgroundColor="@color/card_background">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/campus_name"
-                android:textColor="@color/text_primary"
-                android:textSize="@dimen/text_size_card_title"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:lineSpacingMultiplier="1.4"
-                android:text="@string/campus_address"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/text_size_card_content" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/campus_name"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_card_title"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/campus_address"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_card_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Contacts Section -->
         <TextView
@@ -54,83 +67,100 @@
             android:text="@string/contacts_section"
             android:textColor="@color/primary_green"
             android:textSize="@dimen/text_size_section"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
-            android:background="@drawable/bg_contact_card"
-            android:orientation="vertical"
-            android:padding="@dimen/padding_medium">
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardBackgroundColor="@color/card_background">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/academic_secretary"
-                android:textColor="@color/text_primary"
-                android:textSize="@dimen/text_size_card_title"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:lineSpacingMultiplier="1.4"
-                android:text="@string/academic_phone"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/text_size_card_content" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/academic_secretary"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_card_title"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lineSpacingMultiplier="1.4"
-                android:text="@string/academic_email"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/text_size_card_content" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/academic_phone"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_card_content" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lineSpacingMultiplier="1.4"
-                android:text="@string/academic_hours"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/text_size_card_content" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/academic_email"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_card_content" />
 
-        <LinearLayout
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/academic_hours"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_card_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:background="@drawable/bg_contact_card"
-            android:orientation="vertical"
-            android:padding="@dimen/padding_medium">
+            android:layout_marginTop="@dimen/card_spacing"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardBackgroundColor="@color/card_background">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/course_coordination"
-                android:textColor="@color/text_primary"
-                android:textSize="@dimen/text_size_card_title"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:lineSpacingMultiplier="1.4"
-                android:text="@string/coordination_phone"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/text_size_card_content" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/course_coordination"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_card_title"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lineSpacingMultiplier="1.4"
-                android:text="@string/coordination_email"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/text_size_card_content" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/coordination_phone"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_card_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/coordination_email"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_card_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- Social Media Section -->
         <TextView
@@ -140,24 +170,32 @@
             android:text="@string/social_media_section"
             android:textColor="@color/primary_green"
             android:textSize="@dimen/text_size_section"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
-            android:background="@drawable/bg_contact_card"
-            android:orientation="vertical"
-            android:padding="@dimen/padding_medium">
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardBackgroundColor="@color/card_background">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lineSpacingMultiplier="1.4"
-                android:text="@string/social_media_info"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/text_size_card_content" />
-        </LinearLayout>
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/social_media_info"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_card_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
         <!-- About App Section -->
         <TextView
@@ -167,32 +205,40 @@
             android:text="@string/about_app_section"
             android:textColor="@color/primary_green"
             android:textSize="@dimen/text_size_section"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
-            android:background="@drawable/bg_contact_card"
-            android:orientation="vertical"
-            android:padding="@dimen/padding_medium">
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardBackgroundColor="@color/card_background">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:lineSpacingMultiplier="1.4"
-                android:text="@string/app_version"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/text_size_card_content" />
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:lineSpacingMultiplier="1.4"
-                android:text="@string/app_developed_by"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/text_size_card_content" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/app_version"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_card_content" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="@string/app_developed_by"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_card_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 </ScrollView>

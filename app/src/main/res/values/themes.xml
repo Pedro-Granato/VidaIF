@@ -12,4 +12,10 @@
         <item name="android:statusBarColor">@color/primary_green</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
+
+    <!-- Bottom Navigation Text Style -->
+    <style name="BottomNavTextStyle" parent="TextAppearance.AppCompat.Caption">
+        <item name="android:textSize">@dimen/text_size_nav</item>
+        <item name="fontFamily">sans-serif-medium</item>
+    </style>
 </resources>

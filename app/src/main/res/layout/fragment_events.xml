@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_white"
+    android:background="@color/background_gray_light"
     android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/padding_large">
+        android:paddingTop="@dimen/padding_medium"
+        android:paddingBottom="@dimen/padding_large"
+        android:paddingStart="@dimen/padding_medium"
+        android:paddingEnd="@dimen/padding_medium">
 
         <!-- Upcoming Events -->
         <TextView
@@ -18,7 +22,8 @@
             android:text="@string/upcoming_events"
             android:textColor="@color/primary_green"
             android:textSize="@dimen/text_size_section"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/upcomingEventsRecyclerView"
@@ -35,58 +40,75 @@
             android:text="@string/important_dates"
             android:textColor="@color/primary_green"
             android:textSize="@dimen/text_size_section"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_medium"
-            android:background="@drawable/bg_contact_card"
-            android:orientation="vertical"
-            android:padding="@dimen/padding_medium">
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardBackgroundColor="@color/card_background">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Inscrições SISU"
-                android:textColor="@color/text_primary"
-                android:textSize="@dimen/text_size_card_title"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:lineSpacingMultiplier="1.4"
-                android:text="Janeiro: 21 a 24 • Fevereiro: 25 a 28"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/text_size_card_content" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Inscrições SISU"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_card_title"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium" />
 
-        <LinearLayout
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="Janeiro: 21 a 24 • Fevereiro: 25 a 28"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_card_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_medium"
-            android:background="@drawable/bg_contact_card"
-            android:orientation="vertical"
-            android:padding="@dimen/padding_medium">
+            android:layout_marginTop="@dimen/card_spacing"
+            app:cardCornerRadius="@dimen/card_corner_radius"
+            app:cardElevation="@dimen/card_elevation"
+            app:cardBackgroundColor="@color/card_background">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Processo Seletivo Técnico"
-                android:textColor="@color/text_primary"
-                android:textSize="@dimen/text_size_card_title"
-                android:textStyle="bold" />
+                android:orientation="vertical"
+                android:padding="@dimen/padding_medium">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_small"
-                android:lineSpacingMultiplier="1.4"
-                android:text="Inscrições: Setembro • Provas: Outubro"
-                android:textColor="@color/text_secondary"
-                android:textSize="@dimen/text_size_card_content" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Processo Seletivo Técnico"
+                    android:textColor="@color/text_primary"
+                    android:textSize="@dimen/text_size_card_title"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-medium" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_small"
+                    android:lineSpacingMultiplier="1.5"
+                    android:text="Inscrições: Setembro • Provas: Outubro"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_size_card_content" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 </ScrollView>

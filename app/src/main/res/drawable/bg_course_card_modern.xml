@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/ripple_blue">
+    <item>
+        <layer-list>
+            <!-- Colored left border -->
+            <item
+                android:left="0dp"
+                android:top="0dp"
+                android:bottom="0dp"
+                android:right="-1dp">
+                <shape android:shape="rectangle">
+                    <solid android:color="@color/primary_blue" />
+                    <corners android:radius="@dimen/card_corner_radius" />
+                </shape>
+            </item>
+
+            <!-- Background gradient (offset to show left border) -->
+            <item
+                android:left="6dp"
+                android:top="0dp"
+                android:bottom="0dp"
+                android:right="0dp">
+                <shape>
+                    <gradient
+                        android:angle="135"
+                        android:startColor="@color/course_card_start"
+                        android:endColor="@color/course_card_end"
+                        android:type="linear" />
+                    <corners
+                        android:topRightRadius="@dimen/card_corner_radius"
+                        android:bottomRightRadius="@dimen/card_corner_radius" />
+                </shape>
+            </item>
+        </layer-list>
+    </item>
+</ripple>

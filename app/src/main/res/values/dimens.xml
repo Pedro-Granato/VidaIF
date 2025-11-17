@@ -4,36 +4,47 @@
     <dimen name="padding_small">8dp</dimen>
     <dimen name="padding_medium">16dp</dimen>
     <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_xlarge">32dp</dimen>
 
     <dimen name="margin_small">8dp</dimen>
     <dimen name="margin_medium">12dp</dimen>
     <dimen name="margin_large">24dp</dimen>
+    <dimen name="margin_xlarge">32dp</dimen>
 
     <!-- Card -->
-    <dimen name="card_corner_radius">12dp</dimen>
-    <dimen name="card_elevation">4dp</dimen>
-    <dimen name="card_border_width">1dp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="card_elevation">8dp</dimen>
+    <dimen name="card_border_width">0dp</dimen>
+    <dimen name="card_spacing">12dp</dimen>
 
     <!-- Text Sizes -->
-    <dimen name="text_size_title">18sp</dimen>
-    <dimen name="text_size_section">16sp</dimen>
-    <dimen name="text_size_card_title">14sp</dimen>
-    <dimen name="text_size_card_subtitle">12sp</dimen>
-    <dimen name="text_size_card_content">12sp</dimen>
-    <dimen name="text_size_badge">10sp</dimen>
-    <dimen name="text_size_nav">11sp</dimen>
-    <dimen name="text_size_stat_number">18sp</dimen>
-    <dimen name="text_size_stat_label">10sp</dimen>
+    <dimen name="text_size_title">20sp</dimen>
+    <dimen name="text_size_section">18sp</dimen>
+    <dimen name="text_size_card_title">16sp</dimen>
+    <dimen name="text_size_card_subtitle">14sp</dimen>
+    <dimen name="text_size_card_content">14sp</dimen>
+    <dimen name="text_size_badge">11sp</dimen>
+    <dimen name="text_size_nav">12sp</dimen>
+    <dimen name="text_size_stat_number">32sp</dimen>
+    <dimen name="text_size_stat_label">12sp</dimen>
 
     <!-- Logo -->
-    <dimen name="logo_size">28dp</dimen>
-    <dimen name="logo_corner_radius">6dp</dimen>
+    <dimen name="logo_size">36dp</dimen>
+    <dimen name="logo_corner_radius">8dp</dimen>
 
     <!-- Badge -->
-    <dimen name="badge_corner_radius">12dp</dimen>
-    <dimen name="badge_padding_horizontal">8dp</dimen>
-    <dimen name="badge_padding_vertical">4dp</dimen>
+    <dimen name="badge_corner_radius">16dp</dimen>
+    <dimen name="badge_padding_horizontal">12dp</dimen>
+    <dimen name="badge_padding_vertical">6dp</dimen>
 
     <!-- Nav Icon -->
-    <dimen name="nav_icon_size">20dp</dimen>
+    <dimen name="nav_icon_size">24dp</dimen>
+
+    <!-- Banner -->
+    <dimen name="banner_height">200dp</dimen>
+    <dimen name="banner_corner_radius">16dp</dimen>
+
+    <!-- Indicator -->
+    <dimen name="indicator_size">8dp</dimen>
+    <dimen name="indicator_margin">4dp</dimen>
 </resources>
