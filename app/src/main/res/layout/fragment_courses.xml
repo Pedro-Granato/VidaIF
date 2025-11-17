@@ -3,6 +3,9 @@
     android:id="@+id/coursesRecyclerView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_white"
-    android:padding="@dimen/padding_large"
+    android:background="@color/background_gray_light"
+    android:paddingTop="@dimen/padding_medium"
+    android:paddingBottom="@dimen/padding_large"
+    android:paddingStart="@dimen/padding_medium"
+    android:paddingEnd="@dimen/padding_medium"
     android:clipToPadding="false" />

@@ -6,43 +6,58 @@
     android:background="@color/background_white">
 
     <!-- Header -->
-    <LinearLayout
+    <com.google.android.material.card.MaterialCardView
         android:id="@+id/header"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_gradient_header"
-        android:elevation="8dp"
-        android:orientation="horizontal"
-        android:padding="@dimen/padding_medium"
-        android:paddingTop="28dp"
-        android:gravity="center_vertical"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <!-- Logo -->
-        <TextView
-            android:layout_width="@dimen/logo_size"
-            android:layout_height="@dimen/logo_size"
-            android:background="@android:color/white"
-            android:backgroundTint="#554CAF50"
-            android:gravity="center"
-            android:text="IF"
-            android:textColor="@android:color/white"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-
-        <!-- Title -->
-        <TextView
-            android:id="@+id/headerTitle"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="@string/home_title"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/text_size_title"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:background="@drawable/bg_gradient_header"
+            android:orientation="horizontal"
+            android:padding="@dimen/padding_medium"
+            android:paddingTop="32dp"
+            android:paddingBottom="20dp"
+            android:gravity="center_vertical">
+
+            <!-- Logo -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="@dimen/logo_size"
+                android:layout_height="@dimen/logo_size"
+                app:cardCornerRadius="@dimen/logo_corner_radius"
+                app:cardElevation="4dp"
+                app:cardBackgroundColor="@android:color/white">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="IF"
+                    android:textColor="@color/primary_green"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:fontFamily="sans-serif-black" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Title -->
+            <TextView
+                android:id="@+id/headerTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/home_title"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/text_size_title"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-medium" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
     <!-- Fragment Container -->
     <androidx.fragment.app.FragmentContainerView
@@ -59,12 +74,15 @@
         android:id="@+id/bottomNavigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/background_white"
-        android:elevation="8dp"
+        android:background="@color/nav_background"
+        android:elevation="16dp"
         app:itemIconTint="@color/nav_inactive"
         app:itemTextColor="@color/nav_inactive"
         app:itemActiveIndicatorStyle="@null"
         app:labelVisibilityMode="labeled"
+        app:itemIconSize="@dimen/nav_icon_size"
+        app:itemTextAppearanceActive="@style/BottomNavTextStyle"
+        app:itemTextAppearanceInactive="@style/BottomNavTextStyle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -1,47 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/margin_medium"
-    android:background="@drawable/bg_contact_card"
-    android:orientation="vertical"
-    android:padding="@dimen/padding_medium">
+    android:layout_marginBottom="@dimen/card_spacing"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardBackgroundColor="@android:color/transparent"
+    app:strokeWidth="0dp">
 
-    <TextView
-        android:id="@+id/eventTitle"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textColor="@color/text_primary"
-        android:textSize="@dimen/text_size_card_title"
-        android:textStyle="bold" />
+        android:background="@drawable/bg_event_card_modern"
+        android:orientation="vertical"
+        android:padding="@dimen/padding_medium">
 
-    <TextView
-        android:id="@+id/eventDate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:textColor="@color/text_secondary"
-        android:textSize="@dimen/text_size_card_subtitle"
-        android:visibility="gone" />
+        <TextView
+            android:id="@+id/eventTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_size_card_title"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
 
-    <TextView
-        android:id="@+id/eventContent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_small"
-        android:lineSpacingMultiplier="1.4"
-        android:textColor="@color/text_secondary"
-        android:textSize="@dimen/text_size_card_content" />
+        <TextView
+            android:id="@+id/eventDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:textColor="@color/primary_green"
+            android:textSize="@dimen/text_size_card_subtitle"
+            android:textStyle="bold"
+            android:visibility="gone" />
 
-    <TextView
-        android:id="@+id/eventBadge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_small"
-        android:background="@drawable/bg_badge"
-        android:paddingHorizontal="@dimen/badge_padding_horizontal"
-        android:paddingVertical="@dimen/badge_padding_vertical"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/text_size_badge"
-        android:textStyle="bold" />
-</LinearLayout>
+        <TextView
+            android:id="@+id/eventContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_small"
+            android:lineSpacingMultiplier="1.5"
+            android:textColor="@color/text_secondary"
+            android:textSize="@dimen/text_size_card_content" />
+
+        <TextView
+            android:id="@+id/eventBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
+            android:background="@drawable/bg_badge"
+            android:paddingHorizontal="@dimen/badge_padding_horizontal"
+            android:paddingVertical="@dimen/badge_padding_vertical"
+            android:textColor="@color/badge_text"
+            android:textSize="@dimen/text_size_badge"
+            android:textStyle="bold"
+            android:elevation="2dp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
