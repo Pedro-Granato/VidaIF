@@ -3,6 +3,7 @@ package br.edu.ifsp.vidaif.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +12,8 @@ import br.edu.ifsp.vidaif.model.Course
 
 class CourseAdapter(private val courseList: List<Course>) :
     RecyclerView.Adapter<CourseAdapter.CourseViewHolder>() {
+
+    private var lastPosition = -1
 
     class CourseViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.courseTitle)
@@ -41,12 +44,23 @@ class CourseAdapter(private val courseList: List<Course>) :
                     .inflate(android.R.layout.simple_list_item_1, holder.featuresList, false)
                 val textView = featureView.findViewById<TextView>(android.R.id.text1)
                 textView.text = "• $feature"
-                textView.textSize = 12f
+                textView.textSize = 13f
                 textView.setTextColor(holder.itemView.context.getColor(R.color.text_secondary))
                 holder.featuresList.addView(featureView)
             }
         } else {
             holder.featuresList.visibility = View.GONE
+        }
+
+        // Animate item
+        setAnimation(holder.itemView, position)
+    }
+
+    private fun setAnimation(viewToAnimate: View, position: Int) {
+        if (position > lastPosition) {
+            val animation = AnimationUtils.loadAnimation(viewToAnimate.context, R.anim.item_animation)
+            viewToAnimate.startAnimation(animation)
+            lastPosition = position
         }
     }
 
