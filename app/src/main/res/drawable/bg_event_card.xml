@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Colored left border -->
+    <item
+        android:left="0dp"
+        android:top="0dp"
+        android:bottom="0dp"
+        android:right="-1dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/primary_green_light" />
+            <corners
+                android:radius="@dimen/card_corner_radius" />
+        </shape>
+    </item>
+
+    <!-- Background gradient (offset to show left border) -->
+    <item
+        android:left="4dp"
+        android:top="1dp"
+        android:bottom="1dp"
+        android:right="1dp">
+        <shape>
+            <gradient
+                android:angle="135"
+                android:startColor="@color/event_card_start"
+                android:endColor="@color/event_card_end"
+                android:type="linear" />
+            <corners android:radius="11dp" />
+        </shape>
+    </item>
+</layer-list>

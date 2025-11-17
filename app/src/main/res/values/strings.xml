@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vida no IFSP</string>
+
+    <!-- Bottom Navigation -->
+    <string name="nav_home">Início</string>
+    <string name="nav_courses">Cursos</string>
+    <string name="nav_events">Eventos</string>
+    <string name="nav_contact">Contato</string>
+
+    <!-- Home Screen -->
+    <string name="home_title">Vida no IFSP</string>
+    <string name="latest_news">📢 Últimas Notícias</string>
+    <string name="upcoming_events">📅 Próximos Eventos</string>
+    <string name="available_courses">Cursos Disponíveis</string>
+    <string name="active_students">Alunos Ativos</string>
+    <string name="badge_new">Novo</string>
+
+    <!-- Courses Screen -->
+    <string name="courses_title">Cursos</string>
+    <string name="technologist_courses">🎓 Graduação</string>
+
+    <!-- Events Screen -->
+    <string name="events_title">Eventos &amp; Calendário</string>
+    <string name="important_dates">📋 Datas Importantes</string>
+    <string name="register_button">Inscreva-se</string>
+
+    <!-- Contact Screen -->
+    <string name="contact_title">Contato &amp; Informações</string>
+    <string name="location_section">📍 Localização</string>
+    <string name="contacts_section">📞 Contatos</string>
+    <string name="social_media_section">🌐 Redes Sociais</string>
+    <string name="about_app_section">ℹ️ Sobre o App</string>
+
+    <!-- Campus Info -->
+    <string name="campus_name">IFSP Campus Catanduva</string>
+    <string name="campus_address">Av. Pastor José Dutra de Moraes, 239\nDistrito Industrial Antônio Zácaro - Catanduva/SP\nCEP: 15808-305</string>
+
+    <!-- Contact Info -->
+    <string name="academic_secretary">Secretaria Acadêmica</string>
+    <string name="academic_phone">📞 +55 (17) 3524-9710</string>
+    <string name="academic_email">✉️ cra.ctd@ifsp.edu.br</string>
+    <string name="academic_hours">🕐 Seg-Sex: 7:30h às 19h</string>
+
+    <string name="course_coordination">Coordenação de Cursos</string>
+    <string name="coordination_phone">📞 +55 (17) 3524-9710</string>
+    <string name="coordination_email">✉️ cra.ctd@ifsp.edu.br</string>
+
+    <!-- Social Media -->
+    <string name="social_media_info">📘 Facebook: IFSP Campus Catanduva
+\n📷 Instagram: @ifspcatanduva\n🐦 Twitter: @ifspcatanduva\n🎥 YouTube: IFSP Catanduva</string>
+
+    <!-- About -->
+    <string name="app_version">Versão 1.0.0</string>
+    <string name="app_developed_by">Desenvolvido por estudantes do\ncurso de ADS - IFSP Catanduva\n\nArthur Reinoso &amp; Pedro Granato</string>
+</resources>

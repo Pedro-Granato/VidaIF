@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_large"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/categoryTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/primary_green"
+        android:textSize="@dimen/text_size_section"
+        android:textStyle="bold"
+        android:paddingBottom="@dimen/padding_medium" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoryCoursesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
+        android:clipToPadding="false" />
+
+</LinearLayout>
