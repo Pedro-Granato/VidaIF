@@ -1,6 +1,8 @@
 package br.edu.ifsp.vidaif.fragment
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,11 +14,16 @@ import br.edu.ifsp.vidaif.adapter.BannerAdapter
 import br.edu.ifsp.vidaif.adapter.DestaqueAdapter
 import br.edu.ifsp.vidaif.adapter.EventAdapter
 import br.edu.ifsp.vidaif.adapter.NewsAdapter
+import br.edu.ifsp.vidaif.model.Banner
 import br.edu.ifsp.vidaif.model.Destaque
 import br.edu.ifsp.vidaif.model.Event
 import br.edu.ifsp.vidaif.model.News
 
 class HomeFragment : Fragment() {
+
+    private var autoScrollHandler: Handler? = null
+    private var autoScrollRunnable: Runnable? = null
+    private var currentBannerPosition = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,22 +42,68 @@ class HomeFragment : Fragment() {
         setupEventsRecyclerView(view)
     }
 
+    override fun onDestroyView() {
+        super.onDestroyView()
+        // Para o auto-scroll quando a view é destruída
+        stopAutoScroll()
+    }
+
     private fun setupBannerCarousel(view: View) {
         val bannerRecyclerView: RecyclerView = view.findViewById(R.id.bannerRecyclerView)
 
         val layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
         bannerRecyclerView.layoutManager = layoutManager
 
-        // Lista de imagens do banner (você pode trocar essas imagens)
-        val bannerImages = listOf(
-            R.drawable.banner1,    // Troque aqui!
-            R.drawable.banner2,
-            R.drawable.banner3,
-            R.drawable.banner4,
-            R.drawable.banner5
+        // Lista de banners com URLs (VOCÊ PODE TROCAR AS URLs AQUI!)
+        val banners = listOf(
+            Banner(
+                imageRes = R.drawable.banner1,
+                url = "https://www.ifsp.edu.br"  // Troque pela URL desejada
+            ),
+            Banner(
+                imageRes = R.drawable.banner2,
+                url = "https://www.ifsp.edu.br/noticias"
+            ),
+            Banner(
+                imageRes = R.drawable.banner3,
+                url = "https://www.ifsp.edu.br/processos-seletivos"
+            ),
+            Banner(
+                imageRes = R.drawable.banner4,
+                url = "https://www.ifsp.edu.br/eventos"
+            ),
+            Banner(
+                imageRes = R.drawable.banner5,
+                url = "https://www.ifsp.edu.br/cursos"
+            )
         )
 
-        bannerRecyclerView.adapter = BannerAdapter(bannerImages)
+        bannerRecyclerView.adapter = BannerAdapter(banners)
+
+        // Configurar auto-scroll do carrossel
+        startAutoScroll(bannerRecyclerView, banners.size)
+    }
+
+    private fun startAutoScroll(recyclerView: RecyclerView, itemCount: Int) {
+        autoScrollHandler = Handler(Looper.getMainLooper())
+        autoScrollRunnable = object : Runnable {
+            override fun run() {
+                if (itemCount > 0) {
+                    currentBannerPosition = (currentBannerPosition + 1) % itemCount
+                    recyclerView.smoothScrollToPosition(currentBannerPosition)
+                    autoScrollHandler?.postDelayed(this, 3500) // Troca a cada 3.5 segundos
+                }
+            }
+        }
+        autoScrollHandler?.postDelayed(autoScrollRunnable!!, 3500)
+    }
+
+    private fun stopAutoScroll() {
+        autoScrollRunnable?.let {
+            autoScrollHandler?.removeCallbacks(it)
+        }
+        autoScrollHandler = null
+        autoScrollRunnable = null
     }
 
     private fun setupDestaquesRecyclerView(view: View) {
@@ -61,18 +114,22 @@ class HomeFragment : Fragment() {
             false
         )
 
+        // Lista de destaques com URLs (VOCÊ PODE TROCAR AS URLs AQUI!)
         val destaques = listOf(
             Destaque(
                 title = "Processo Seletivo Simplificado para Vagas dos Cursos de Extensão",
-                imageRes = R.drawable.destaque1  // Troque aqui!
+                imageRes = R.drawable.destaque1,
+                url = "https://www.ifsp.edu.br/processos-seletivos"  // Troque pela URL desejada
             ),
             Destaque(
                 title = "IFSP abre concurso público com 21 vagas",
-                imageRes = R.drawable.destaque2  // Troque aqui!
+                imageRes = R.drawable.destaque2,
+                url = "https://www.ifsp.edu.br/concursos"
             ),
             Destaque(
                 title = "Processo seletivo de professor substituto",
-                imageRes = R.drawable.destaque3  // Troque aqui!
+                imageRes = R.drawable.destaque3,
+                url = "https://www.ifsp.edu.br/vagas"
             )
         )
 
