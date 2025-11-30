@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="200dp"
     app:cardCornerRadius="16dp"
     app:cardElevation="8dp"
     android:layout_margin="12dp"
@@ -10,21 +10,40 @@
     android:clickable="true"
     android:focusable="true">
 
-    <ImageView
-        android:id="@+id/bannerImage"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:scaleType="fitCenter"
-        android:adjustViewBounds="true"
-        android:minHeight="150dp"
-        android:maxHeight="250dp"
-        android:contentDescription="Banner"
-        android:transitionName="banner_transition" />
+        android:layout_height="match_parent">
 
-    <!-- Overlay sutil para melhorar legibilidade -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@android:color/transparent" />
+        <ImageView
+            android:id="@+id/bannerImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:contentDescription="Banner" />
+
+        <!-- Gradiente para melhorar legibilidade do texto -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/gradient_overlay" />
+
+        <!-- Texto sobre a imagem (opcional) -->
+        <TextView
+            android:id="@+id/bannerText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:padding="16dp"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:visibility="gone" />
+
+    </FrameLayout>
 
 </com.google.android.material.card.MaterialCardView>

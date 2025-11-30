@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ifsp.vidaif.R
@@ -17,6 +18,7 @@ class BannerAdapter(private val banners: List<Banner>) :
 
     class BannerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val bannerImage: ImageView = itemView.findViewById(R.id.bannerImage)
+        val bannerText: TextView = itemView.findViewById(R.id.bannerText)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BannerViewHolder {
@@ -28,6 +30,14 @@ class BannerAdapter(private val banners: List<Banner>) :
     override fun onBindViewHolder(holder: BannerViewHolder, position: Int) {
         val banner = banners[position]
         holder.bannerImage.setImageResource(banner.imageRes)
+
+        // Mostrar ou esconder texto
+        if (banner.text.isNotEmpty()) {
+            holder.bannerText.text = banner.text
+            holder.bannerText.visibility = View.VISIBLE
+        } else {
+            holder.bannerText.visibility = View.GONE
+        }
 
         // Adiciona animação suave ao aparecer
         val animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.fade_in)
