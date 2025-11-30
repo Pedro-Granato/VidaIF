@@ -29,8 +29,7 @@
                     android:id="@+id/destaqueImage"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:scaleType="fitCenter"
-                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
                     android:contentDescription="Destaque" />
 
                 <!-- Gradiente sutil sobre a imagem -->
