@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.ifsp.vidaif.R
 import br.edu.ifsp.vidaif.adapter.BannerAdapter
@@ -21,9 +22,15 @@ import br.edu.ifsp.vidaif.model.News
 
 class HomeFragment : Fragment() {
 
-    private var autoScrollHandler: Handler? = null
-    private var autoScrollRunnable: Runnable? = null
+    // Auto-scroll para Banner
+    private var bannerAutoScrollHandler: Handler? = null
+    private var bannerAutoScrollRunnable: Runnable? = null
     private var currentBannerPosition = 0
+
+    // Auto-scroll para Destaques
+    private var destaquesAutoScrollHandler: Handler? = null
+    private var destaquesAutoScrollRunnable: Runnable? = null
+    private var currentDestaquePosition = 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,7 +52,8 @@ class HomeFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         // Para o auto-scroll quando a view é destruída
-        stopAutoScroll()
+        stopBannerAutoScroll()
+        stopDestaquesAutoScroll()
     }
 
     private fun setupBannerCarousel(view: View) {
@@ -80,39 +88,46 @@ class HomeFragment : Fragment() {
 
         bannerRecyclerView.adapter = BannerAdapter(banners)
 
-        // Configurar auto-scroll do carrossel
-        startAutoScroll(bannerRecyclerView, banners.size)
+        // Configurar auto-scroll do carrossel de banners
+        startBannerAutoScroll(bannerRecyclerView, banners.size)
     }
 
-    private fun startAutoScroll(recyclerView: RecyclerView, itemCount: Int) {
-        autoScrollHandler = Handler(Looper.getMainLooper())
-        autoScrollRunnable = object : Runnable {
+    private fun startBannerAutoScroll(recyclerView: RecyclerView, itemCount: Int) {
+        bannerAutoScrollHandler = Handler(Looper.getMainLooper())
+        bannerAutoScrollRunnable = object : Runnable {
             override fun run() {
                 if (itemCount > 0) {
                     currentBannerPosition = (currentBannerPosition + 1) % itemCount
                     recyclerView.smoothScrollToPosition(currentBannerPosition)
-                    autoScrollHandler?.postDelayed(this, 3500) // Troca a cada 3.5 segundos
+                    bannerAutoScrollHandler?.postDelayed(this, 3500) // Troca a cada 3.5 segundos
                 }
             }
         }
-        autoScrollHandler?.postDelayed(autoScrollRunnable!!, 3500)
+        bannerAutoScrollHandler?.postDelayed(bannerAutoScrollRunnable!!, 3500)
     }
 
-    private fun stopAutoScroll() {
-        autoScrollRunnable?.let {
-            autoScrollHandler?.removeCallbacks(it)
+    private fun stopBannerAutoScroll() {
+        bannerAutoScrollRunnable?.let {
+            bannerAutoScrollHandler?.removeCallbacks(it)
         }
-        autoScrollHandler = null
-        autoScrollRunnable = null
+        bannerAutoScrollHandler = null
+        bannerAutoScrollRunnable = null
     }
 
     private fun setupDestaquesRecyclerView(view: View) {
         val destaquesRecyclerView: RecyclerView = view.findViewById(R.id.destaquesRecyclerView)
-        destaquesRecyclerView.layoutManager = LinearLayoutManager(
+
+        // Configurar layout manager
+        val layoutManager = LinearLayoutManager(
             context,
             LinearLayoutManager.HORIZONTAL,
             false
         )
+        destaquesRecyclerView.layoutManager = layoutManager
+
+        // Adicionar SnapHelper para centralizar os cards
+        val snapHelper = PagerSnapHelper()
+        snapHelper.attachToRecyclerView(destaquesRecyclerView)
 
         // Lista de destaques com URLs (VOCÊ PODE TROCAR AS URLs AQUI!)
         val destaques = listOf(
@@ -134,6 +149,31 @@ class HomeFragment : Fragment() {
         )
 
         destaquesRecyclerView.adapter = DestaqueAdapter(destaques)
+
+        // Configurar auto-scroll do carrossel de destaques
+        startDestaquesAutoScroll(destaquesRecyclerView, destaques.size)
+    }
+
+    private fun startDestaquesAutoScroll(recyclerView: RecyclerView, itemCount: Int) {
+        destaquesAutoScrollHandler = Handler(Looper.getMainLooper())
+        destaquesAutoScrollRunnable = object : Runnable {
+            override fun run() {
+                if (itemCount > 0) {
+                    currentDestaquePosition = (currentDestaquePosition + 1) % itemCount
+                    recyclerView.smoothScrollToPosition(currentDestaquePosition)
+                    destaquesAutoScrollHandler?.postDelayed(this, 4000) // Troca a cada 4 segundos
+                }
+            }
+        }
+        destaquesAutoScrollHandler?.postDelayed(destaquesAutoScrollRunnable!!, 4000)
+    }
+
+    private fun stopDestaquesAutoScroll() {
+        destaquesAutoScrollRunnable?.let {
+            destaquesAutoScrollHandler?.removeCallbacks(it)
+        }
+        destaquesAutoScrollHandler = null
+        destaquesAutoScrollRunnable = null
     }
 
     private fun setupNewsRecyclerView(view: View) {
