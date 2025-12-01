@@ -1,38 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginEnd="12dp">
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="260dp"
-        android:layout_height="160dp"
-        android:elevation="4dp"
-        android:radius="12dp">
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="16dp"
+        app:strokeWidth="0dp"
+        android:clickable="true"
+        android:focusable="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/destaqueImage"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:scaleType="centerCrop"
-                android:contentDescription="Destaque" />
+                android:layout_height="120dp">
+
+                <ImageView
+                    android:id="@+id/destaqueImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Destaque" />
+
+                <!-- Gradiente sutil sobre a imagem -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/gradient_overlay" />
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/destaqueTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="12dp"
+                android:padding="14dp"
                 android:textColor="@color/text_primary"
-                android:textSize="13sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 android:maxLines="2"
-                android:ellipsize="end" />
+                android:ellipsize="end"
+                android:lineSpacingExtra="2dp" />
         </LinearLayout>
-    </androidx.cardview.widget.CardView>
-</LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</FrameLayout>
