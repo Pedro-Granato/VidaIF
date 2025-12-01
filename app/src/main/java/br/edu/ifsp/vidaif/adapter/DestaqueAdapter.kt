@@ -38,6 +38,12 @@ class DestaqueAdapter(private val destaques: List<Destaque>) :
 
         // Adiciona click listener para abrir URL
         holder.itemView.setOnClickListener {
+            Toast.makeText(
+                holder.itemView.context,
+                "Clique detectado!",
+                Toast.LENGTH_SHORT
+            ).show()
+
             if (destaque.url.isNotEmpty()) {
                 try {
                     val intent = Intent(Intent.ACTION_VIEW, Uri.parse(destaque.url))
@@ -45,17 +51,28 @@ class DestaqueAdapter(private val destaques: List<Destaque>) :
                 } catch (e: Exception) {
                     Toast.makeText(
                         holder.itemView.context,
-                        "Não foi possível abrir o link",
+                        "Erro: ${e.message}",
                         Toast.LENGTH_SHORT
                     ).show()
                 }
+            } else {
+                Toast.makeText(
+                    holder.itemView.context,
+                    "Este destaque não possui link",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
 
         // Adiciona efeito de elevação ao clicar
+        holder.itemView.isClickable = true
+        holder.itemView.isFocusable = true
+
+        // Adiciona feedback visual ao clicar
         if (destaque.url.isNotEmpty()) {
-            holder.itemView.isClickable = true
-            holder.itemView.isFocusable = true
+            holder.itemView.foreground = holder.itemView.context.getDrawable(
+                android.R.drawable.list_selector_background
+            )
         }
     }
 
