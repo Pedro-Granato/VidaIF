@@ -11,6 +11,10 @@
 
         <item name="android:statusBarColor">@color/primary_green</item>
         <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Cor da barra de navegação do Android (remove a risca preta) -->
+        <item name="android:navigationBarColor">@android:color/white</item>
+        <item name="android:windowLightNavigationBar">true</item>
     </style>
 
     <!-- Bottom Navigation Text Style -->

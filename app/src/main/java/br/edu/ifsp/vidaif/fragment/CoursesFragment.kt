@@ -42,22 +42,22 @@ class CoursesFragment : Fragment() {
                 courses = listOf(
                     Course(
                         title = "Mecânica Integrado ao Ensino Médio",
-                        info = "Duração: 4 anos • Integral",
+                        info = "Duração: 3 anos • Integral",
                         description = "Formação técnica em Mecânica integrada ao Ensino Médio. Aprenda sobre processos de fabricação, manutenção, projetos mecânicos e muito mais."
                     ),
                     Course(
                         title = "Mecatrônica Integrado ao Ensino Médio",
-                        info = "Duração: 4 anos • Integral",
+                        info = "Duração: 3 anos • Integral",
                         description = "Curso técnico que integra Mecânica, Eletrônica e Computação. Forme-se em uma área estratégica da indústria moderna com automação e robótica."
                     ),
                     Course(
                         title = "Química Integrado ao Ensino Médio",
-                        info = "Duração: 4 anos • Integral",
+                        info = "Duração: 3 anos • Integral",
                         description = "Formação técnica em Química com Ensino Médio. Desenvolva competências em análises químicas, processos industriais e controle de qualidade."
                     ),
                     Course(
                         title = "Redes de Computadores Integrado ao Ensino Médio",
-                        info = "Duração: 4 anos • Integral",
+                        info = "Duração: 3 anos • Integral",
                         description = "Curso técnico focado em infraestrutura de TI e redes. Aprenda sobre instalação, configuração e manutenção de redes de computadores."
                     )
                 )
@@ -100,12 +100,12 @@ class CoursesFragment : Fragment() {
                 courses = listOf(
                     Course(
                         title = "Internet das Coisas (IoT)",
-                        info = "Duração: 18 meses • Semipresencial",
+                        info = "Duração: 3 semestres • Presencial",
                         description = "Especialização em IoT para profissionais que desejam dominar as tecnologias de conectividade, sensores, dispositivos inteligentes e análise de dados."
                     ),
                     Course(
                         title = "Saberes e Práticas para a Docência no Ensino Fundamental I",
-                        info = "Duração: 18 meses • Semipresencial",
+                        info = "Duração: 2 semestres • Presencial",
                         description = "Especialização voltada para educadores que atuam ou pretendem atuar no Ensino Fundamental I. Aprofunde conhecimentos pedagógicos e metodologias de ensino."
                     )
                 )
