@@ -18,7 +18,7 @@ class BannerAdapter(private val banners: List<Banner>) :
 
     class BannerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val bannerImage: ImageView = itemView.findViewById(R.id.bannerImage)
-        val bannerText: TextView = itemView.findViewById(R.id.bannerText)
+        val bannerCategory: TextView = itemView.findViewById(R.id.bannerCategory)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BannerViewHolder {
@@ -31,12 +31,12 @@ class BannerAdapter(private val banners: List<Banner>) :
         val banner = banners[position]
         holder.bannerImage.setImageResource(banner.imageRes)
 
-        // Mostrar ou esconder texto
-        if (banner.text.isNotEmpty()) {
-            holder.bannerText.text = banner.text
-            holder.bannerText.visibility = View.VISIBLE
+        // Mostrar ou esconder categoria
+        if (banner.category.isNotEmpty()) {
+            holder.bannerCategory.text = banner.category
+            holder.bannerCategory.visibility = View.VISIBLE
         } else {
-            holder.bannerText.visibility = View.GONE
+            holder.bannerCategory.visibility = View.GONE
         }
 
         // Adiciona animação suave ao aparecer
