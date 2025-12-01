@@ -66,23 +66,23 @@ class HomeFragment : Fragment() {
         val banners = listOf(
             Banner(
                 imageRes = R.drawable.banner1,
-                url = "https://www.ifsp.edu.br"  // Troque pela URL desejada
+                url = "https://www.ifsp.edu.br/ps2026"
             ),
             Banner(
                 imageRes = R.drawable.banner2,
-                url = "https://www.ifsp.edu.br/noticias"
+                url = ""  // Sem link
             ),
             Banner(
                 imageRes = R.drawable.banner3,
-                url = "https://www.ifsp.edu.br/processos-seletivos"
+                url = "https://www.ifsp.edu.br/images/reitoria/AssessoriaComunicacao/GuiadoEstudante/GuiaEstudante.pdf"
             ),
             Banner(
                 imageRes = R.drawable.banner4,
-                url = "https://www.ifsp.edu.br/eventos"
+                url = "https://www.ifsp.edu.br/component/content/article/91-assuntos/desenvolvimento-institucional/desenv-institucional/5000-suap-aprimorado-a-pesquisa-por-palavra-chave-para-encontrar-o-tipo-de-processo-gan"
             ),
             Banner(
                 imageRes = R.drawable.banner5,
-                url = "https://www.ifsp.edu.br/cursos"
+                url = "https://ctd.ifsp.edu.br/index.php/component/content/article/8-assuntos/359-plano-de-desenvolvimento-institucional-comissao-local-campus-catanduva"
             )
         )
 
@@ -132,19 +132,19 @@ class HomeFragment : Fragment() {
         // Lista de destaques com URLs (VOCÊ PODE TROCAR AS URLs AQUI!)
         val destaques = listOf(
             Destaque(
-                title = "Processo Seletivo Simplificado para Vagas dos Cursos de Extensão",
+                title = "IFSP Campus Catanduva protagoniza projeto inovador de podcasts sobre temas do Enem e acerta o tema central de 2025",
                 imageRes = R.drawable.destaque1,
-                url = "https://www.ifsp.edu.br/processos-seletivos"  // Troque pela URL desejada
+                url = "https://ctd.ifsp.edu.br/index.php/component/content/article/35-destaques/891-ifsp-campus-catanduva-protagoniza-projeto-inovador-de-podcasts-sobre-temas-do-enem-e-acerta-o-tema-central-de-2025"
             ),
             Destaque(
                 title = "IFSP abre concurso público com 21 vagas",
                 imageRes = R.drawable.destaque2,
-                url = "https://www.ifsp.edu.br/concursos"
+                url = "https://ctd.ifsp.edu.br/index.php/component/content/article/35-destaques/881-ifsp-abre-concurso-publico-com-21-vagas-para-cargos-tecnico-administrativos"
             ),
             Destaque(
                 title = "Processo seletivo de professor substituto",
                 imageRes = R.drawable.destaque3,
-                url = "https://www.ifsp.edu.br/vagas"
+                url = "https://ctd.ifsp.edu.br/index.php/component/content/article/35-destaques/887-edital-n-99-2025-ifsp-inscreve-para-processo-seletivo-de-professor-substituto"
             )
         )
 
