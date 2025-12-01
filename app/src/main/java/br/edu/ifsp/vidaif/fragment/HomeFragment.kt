@@ -63,7 +63,7 @@ class HomeFragment : Fragment() {
 
         val destaques = listOf(
             Destaque(
-                title = "IFSP Campus Catanduva protagoniza projeto inovador de podcasts sobre temas do Enem e acerta o tema central de 2025",
+                title = "Projeto de podcasts do IFSP Catanduva acerta tema central do Enem 2025",
                 imageRes = R.drawable.destaque1  // Troque aqui!
             ),
             Destaque(
