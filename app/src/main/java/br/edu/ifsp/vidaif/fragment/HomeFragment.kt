@@ -63,7 +63,7 @@ class HomeFragment : Fragment() {
 
         val destaques = listOf(
             Destaque(
-                title = "Processo Seletivo Simplificado para Vagas dos Cursos de Extensão",
+                title = "IFSP Campus Catanduva protagoniza projeto inovador de podcasts sobre temas do Enem e acerta o tema central de 2025",
                 imageRes = R.drawable.destaque1  // Troque aqui!
             ),
             Destaque(
