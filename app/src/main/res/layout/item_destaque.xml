@@ -1,58 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingStart="16dp"
-    android:paddingEnd="16dp"
+    android:layout_height="180dp"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_gravity="center"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="16dp"
+    app:strokeWidth="0dp"
     android:clickable="true"
-    android:focusable="true">
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground">
 
-    <com.google.android.material.card.MaterialCardView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="180dp"
-        android:layout_gravity="center"
-        app:cardElevation="8dp"
-        app:cardCornerRadius="16dp"
-        app:strokeWidth="0dp"
-        android:clickable="false"
-        android:focusable="false">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="120dp">
 
-            <FrameLayout
+            <ImageView
+                android:id="@+id/destaqueImage"
                 android:layout_width="match_parent"
-                android:layout_height="120dp">
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="Destaque" />
 
-                <ImageView
-                    android:id="@+id/destaqueImage"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scaleType="centerCrop"
-                    android:contentDescription="Destaque" />
-
-                <!-- Gradiente sutil sobre a imagem -->
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_gravity="bottom"
-                    android:background="@drawable/gradient_overlay" />
-            </FrameLayout>
-
-            <TextView
-                android:id="@+id/destaqueTitle"
+            <!-- Gradiente sutil sobre a imagem -->
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="14dp"
-                android:textColor="@color/text_primary"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:maxLines="2"
-                android:ellipsize="end"
-                android:lineSpacingExtra="2dp" />
-        </LinearLayout>
-    </com.google.android.material.card.MaterialCardView>
-</FrameLayout>
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/gradient_overlay" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/destaqueTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="14dp"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:lineSpacingExtra="2dp" />
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>
